@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+	<meta http-equiv="content-type" content="text/html>"; charset="utf-8" />
+	<link rel="stylesheet" href="style/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $("#hide").click(function(){
+        $("#hideAndShow").toggle(300, function () {
+            if ($("#hideAndShow").is(":visible")) {
+                $("#hide").text("Hide!");
+            } else {
+                $("#hide").text("Show!");
+            }
+        });
+
+    });
+
+    $("#move").click(function () {
+        var mover = $("#move");
+        mover.animate({ right: '190px' }).animate({ left: '40px' });
+    });
+
+      $("#getButton").click(function () {
+          $("#set").slideDown("slow").text("You entered: " + $("#get").val());
+      });
+
+      $("#classer").click(function () {
+          $("body").toggleClass("night");
+
+      });
+  });
+  </script>
+</head>
+<body>
+
+    <h1> JQuery Basics </h1>
+
+    <h2> Hide & Show Functionality </h2>
+
+    <button id="hide">Hide!</button>
+
+    <p id="hideAndShow">This uses the toggle function to hide and show! You can also choose to fade/slide too. 
+        With a callback function, I can change the text of the button right after you press it.</p>
+
+    <h2> Animation </h2>
+    <button id="move">Move me!</button>
+
+    <br />
+
+    <h2> Get, Set, Add</h2>
+    <p> We can get text/values from elements and use/change them for other purposes. </p>
+    <input type="text" id="get" placeholder="Enter some text...">
+    <p id="set"></p>
+    <button id="getButton">Get and Set!</button>
+
+    <h2> Adding classes</h2>
+    <p>By adding classes, we can completely change the way an element looks like. Use the button below to toggle between night and day mode.</p>
+    <button id="classer"> Click me!</button>
+</body>
+</html>
